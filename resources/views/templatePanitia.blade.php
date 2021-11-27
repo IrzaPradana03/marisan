@@ -11,6 +11,7 @@
 <body>
     <h1>MArisan</h1>
     <a href="/panitia/arisan">Arisan</a>
+    <a href="/panitia/profile">Profile</a>
     @yield('konten')
 </body>
 

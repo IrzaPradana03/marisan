@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PanitiaController;
 use App\Http\Controllers\ArisanController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,11 @@ Route::middleware('auth')->group(function () {
                 Route::get('/', [ArisanController::class, 'index']);
                 Route::get('/tambah', [ArisanController::class, 'create']);
                 Route::post('/tambah', [ArisanController::class, 'store']);
+            });
+
+            Route::prefix('profile')->group(function () {
+                Route::get('/', [ProfileController::class, 'index']);
+                Route::put('/', [ProfileController::class, 'update']);
             });
         });
     });
